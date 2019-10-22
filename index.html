@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_5</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <form name="numberForm">
+            <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/>
+            <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/>
+            <button  id="submit" name ="submit" onclick="numbers(numberForm)">Valider</button> <!--Le fameux onclick qui permet d'enclancher la fonction-->
+        </form>
+        <script>
+          //La variable "result" correspond à la multiplication des variables "firstNumber" et "secondNumber". .toFixed permet d'arrondir le résultat à 0 chiffres après la virgule.
+          function numbers() {
+            var result = firstNumber.value * secondNumber.value;
+            alert(result.toFixed(0));
+          }
+        </script>
+    </body>
+</html>
