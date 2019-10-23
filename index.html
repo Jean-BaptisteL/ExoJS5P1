@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Exercice_5</title>
         <meta charset="UTF-8" />
+        <title>Exercice_5</title>
     </head>
     <body>
         <form>
@@ -14,13 +14,14 @@
           function resultNumbers() {
             var firstNumber = document.getElementById('firstNumber').value; //On déclare des variables dont les valeurs sont prises directement dans les valeurs des inputs sélectionnés par leurs id.
             var secondNumber = document.getElementById('secondNumber').value;
-            var roundedFirstNumber = Math.round(firstNumber), multiplicationResult = roundedFirstNumber * secondNumber;
-            //Si le résultat est incorrecte, une alerte spéciale apparait. Sinon le résultat de la multiplication est affiché dans une boîte de dialogue.
-            if (isNaN(multiplicationResult)==true) {
-              alert('Des nombres ! Je veux des nombres ! Tu peux même mettre des virgules !');
-            }
-            else {
-              alert(multiplicationResult);
+            //parseInt permet de ne garder que la partie entière d'un nombre.
+            var roundedFirstNumber = parseInt(firstNumber);
+            //On vérifie si les valeurs sont bien des nombres décimaux.
+            if((isNaN(firstNumber) == false) && (isNaN(secondNumber) == false) && (Number.isInteger(parseFloat(firstNumber)) == false) && (Number.isInteger(parseFloat(secondNumber)) == false)){
+            var multiplicationResult = roundedFirstNumber * secondNumber;
+            alert(multiplicationResult);
+            }else{
+            alert('Veuillez entrez des nombres décimaux !');
             }
           }
         </script>
