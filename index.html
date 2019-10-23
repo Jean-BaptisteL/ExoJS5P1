@@ -5,16 +5,23 @@
         <meta charset="UTF-8" />
     </head>
     <body>
-        <form name="numberForm">
+        <form>
             <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/>
             <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/>
-            <button  id="submit" name ="submit" onclick="numbers(numberForm)">Valider</button> <!--Le fameux onclick qui permet d'enclancher la fonction-->
+            <button  id="submit" name ="submit" onclick="resultNumbers()">Valider</button> <!--Le fameux onclick qui permet d'enclancher la fonction-->
         </form>
         <script>
-          //La variable "result" correspond à la multiplication des variables "firstNumber" et "secondNumber". .toFixed permet d'arrondir le résultat à 0 chiffres après la virgule.
-          function numbers() {
-            var result = firstNumber.value * secondNumber.value;
-            alert(result.toFixed(0));
+          function resultNumbers() {
+            var firstNumber = document.getElementById('firstNumber').value; //On déclare des variables dont les valeurs sont prises directement dans les valeurs des inputs sélectionnés par leurs id.
+            var secondNumber = document.getElementById('secondNumber').value;
+            var roundedFirstNumber = Math.round(firstNumber), multiplicationResult = roundedFirstNumber * secondNumber;
+            //Si le résultat est incorrecte, une alerte spéciale apparait. Sinon le résultat de la multiplication est affiché dans une boîte de dialogue.
+            if (isNaN(multiplicationResult)==true) {
+              alert('Des nombres ! Je veux des nombres ! Tu peux même mettre des virgules !');
+            }
+            else {
+              alert(multiplicationResult);
+            }
           }
         </script>
     </body>
